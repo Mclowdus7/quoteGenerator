@@ -5,7 +5,7 @@
 }
 
 body {
-    background-image: url(hopefuldoll.jpg);
+    background-image: linear-gradient(to bottom right, rgb(59, 15, 149), rgb(254, 254, 251));
 }
 
 .header {
