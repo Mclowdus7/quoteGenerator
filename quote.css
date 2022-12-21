@@ -89,17 +89,20 @@ transform: translateY(4px);
     display: flex;
 }
 
-.new-quote {
+.button-box {
     height: 30px;
     width: 90%;
     display: flex;
+    flex-wrap: wrap-reverse;
+    align-items: center;
     justify-content: center;
-    margin-bottom: 200px;
+    margin:200px 0;
 }
 
-.new-quote button {
+ button {
     background-color: white;
     padding: 40px 90px;
+    margin: 20px;
     font-size: 35px;
     border-radius: 30px;
     text-align: center;
@@ -107,7 +110,7 @@ transform: translateY(4px);
    line-height: 0em;
 }
 
-.new-quote button:hover {
+button:hover {
     background-color: lightgreen;
     box-shadow: 0 5px #666;
     transform: translateY(4px);
