@@ -7,6 +7,10 @@ fetch(testurl)
 .then(data => console.log(data))
 
 document.getElementById("quote").addEventListener("click", getQuote);
+document.getElementById("motivation").addEventListener("click", getMotivation);
+document.getElementById("love").addEventListener("click", getLove);
+document.getElementById("wisdom").addEventListener("click", getWisdom);
+
 
 const quotes = document.getElementById("quotebox");
 
@@ -16,17 +20,47 @@ function getQuote() {
     fetch(endpoint)
     .then(res => res.json())
     .then(data => {console.log(data.results[0].content + " - " + data.results[0].author)
-    //create a var to quickly access data
     let random = `<p>${data.results[0].content} - ${data.results[0].author}</p>`;
     quotes.innerHTML = random;
-})
+  })
+}
+
+
+
+function getWisdom() {
+    const endpoint = `https://api.quotable.io/random?tags=wisdom`;
+    fetch(endpoint)
+    .then(res => res.json())
+    .then(data => {console.log(data.content + " - " + data.author)
+    let random = `<p>${data.content} - ${data.author}</p>`;
+    quotes.innerHTML = random;
+   })
+}
+
+function getMotivation() {
+    const endpoint = `https://api.quotable.io/random?tags=motivational`;
+    fetch(endpoint)
+    .then(res => res.json())
+    .then(data => {console.log(data.content + " - " + data.author)
+    let random = `<p>${data.content} - ${data.author}</p>`;
+    quotes.innerHTML = random;
+   })
+}
+
+function getLove() {
+    const endpoint = `https://api.quotable.io/random?tags=love`;
+    fetch(endpoint)
+    .then(res => res.json())
+    .then(data => {console.log(data.content + " - " + data.author)
+    let random = `<p>${data.content} - ${data.author}</p>`;
+    quotes.innerHTML = random;
+   })
+}
     
-    //display results in quote-box, quotebox is connected because the lines below work
-    //let random = `<h1>"To exist is to change, to change is to mature, to mature is to go on creating oneself endlessly. - Henri Bergson"</h1>`;
-    //quotes.innerHTML = random;
+    
     
     
 
-}
+
 
 
