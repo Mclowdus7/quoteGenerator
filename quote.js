@@ -16,11 +16,12 @@ const quotes = document.getElementById("quotebox");
 
 function getQuote() {
     const page = Math.floor(Math.random()* 100);
+    const int = Math.floor(Math.random()* 20);
     const endpoint = `https://api.quotable.io/quotes?page=${page}`;
     fetch(endpoint)
     .then(res => res.json())
-    .then(data => {console.log(data.results[0].content + " - " + data.results[0].author)
-    let random = `<p>${data.results[0].content} - ${data.results[0].author}</p>`;
+    .then(data => {console.log(data.results[int].content + " - " + data.results[int].author)
+    let random = `<p>${data.results[int].content} - ${data.results[int].author}</p>`;
     quotes.innerHTML = random;
   })
 }
